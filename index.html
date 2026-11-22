@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrono-Agent: The Lost Timeline</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <!-- Barra Superior de Estado del Juego -->
+        <header class="hud-header">
+            <div class="agent-info">
+                <span class="pulse-dot"></span>
+                <span id="hud-agent">AGENT: UNKNOWN</span>
+            </div>
+            <div class="timeline-meter">
+                <span>TIMELINE STABILITY:</span>
+                <div class="progress-bar">
+                    <div id="stability-fill" class="progress-fill" style="width: 100%;"></div>
+                </div>
+                <span id="stability-text">100%</span>
+            </div>
+        </header>
+
+        <!-- Pantalla Principal de la Historia -->
+        <main class="story-screen">
+            <div class="chapter-tag" id="chapter-tag">CHAPTER 01 // HQ CHECK-IN</div>
+            
+            <!-- Imagen/Icono visual de la escena -->
+            <div class="scene-visual" id="scene-visual">🕰️</div>
+
+            <!-- Texto narrativo de la historia -->
+            <div class="dialogue-box">
+                <p id="story-text">
+                    Welcome to the Chrono-Agency! Every day, our team <strong>protects</strong> history from time anomalies. Agents <strong>wear</strong> cyber-suits and <strong>monitor</strong> the timeline 24/7.
+                </p>
+                <p id="story-prompt" class="prompt-highlight">
+                    To begin your shift, <strong>enter</strong> your agent name below and <strong>press</strong> the start button!
+                </p>
+            </div>
+
+            <!-- Input inicial (solo visible en la escena 1) -->
+            <div id="name-input-area" class="input-group">
+                <input type="text" id="agent-name-input" placeholder="Type your name here..." maxlength="15">
+                <button class="choice-btn primary" onclick="startStory()">START MISSION</button>
+            </div>
+
+            <!-- Opciones de decisión interactiva (aparecen en las siguientes escenas) -->
+            <div id="choices-container" class="choices-grid" style="display: none;"></div>
+
+            <!-- Mensaje de retroalimentación de la historia -->
+            <div id="feedback-banner" class="feedback-banner" style="display: none;"></div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
